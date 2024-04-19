@@ -28,11 +28,7 @@ export default function ButtonGroup({
   return (
     <section className="button-group">
       {secondaryButton.map(({ text, onClick }) => (
-        <Button
-          key={text}
-          buttonType="secondary"
-          onClick={onClick}
-        >
+        <Button key={text} buttonType="secondary" onClick={onClick}>
           {text}
         </Button>
       ))}
