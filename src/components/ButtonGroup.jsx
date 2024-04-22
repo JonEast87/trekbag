@@ -17,7 +17,7 @@ export default function ButtonGroup({
     },
     {
       text: "Reset to initial",
-      onCLick: handleResetToInitial,
+      onClick: handleResetToInitial,
     },
     {
       text: "Remove all items",
