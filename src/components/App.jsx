@@ -7,7 +7,9 @@ import ItemList from "./ItemList";
 import Sidebar from "./Sidebar";
 
 function App() {
-  const [items, setItems] = useState(initalItems);
+  const [items, setItems] = useState(
+    () => JSON.parse(localStorage.getItem("items")) || initalItems
+  );
 
   const handleAddItem = (newItemText) => {
     const newItem = {
