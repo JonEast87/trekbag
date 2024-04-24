@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { initalItems } from "../lib/constants";
 import BackgroundHeading from "./BackgroundHeading";
 import Footer from "./Footer";
@@ -11,7 +11,7 @@ function App() {
 
   const handleAddItem = (newItemText) => {
     const newItem = {
-      id: new Date().getTime,
+      id: new Date().getTime(),
       name: newItemText,
       packed: false,
     };
@@ -59,6 +59,10 @@ function App() {
 
     setItems(newItems);
   };
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   return (
     <>
